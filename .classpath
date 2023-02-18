@@ -6,6 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="/Users/ramyakasaraneni/Desktop/soot_tutorial/soot4.3.0/soot-4.3.0-jar-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="lib/soot-4.3.0-jar-with-dependencies.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
