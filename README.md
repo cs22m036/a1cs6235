@@ -30,3 +30,91 @@ List<Unit> heads = g.getHeads();
 List<Unit> successors = g.getSuccsOf(u); 
 
 **Your task is to traverse Control flow graph graph in a control flow order and print the units. (Hint - DFS) . Try to implement this by monday.**
+
+     
+## Instructions for Assignment 1:
+
+Alias Analysis is given below.
+
+http://www.cse.iitm.ac.in/~krishna/cs6235/a1.html
+
+You need to implement the *internalTransform* method in *AliasAnalysis* class under *submit_a1* package.
+
+ *A1* is the main class. It takes the input file from *inputs* folder and queries file from *queries* folder.
+      
+###### Query form      
+
+Each query is of the form
+*&lt;class&gt;:&lt;method&gt;:&lt;var1&gt; alias &lt;var2&gt;*
+      
+It represents, "Inside class *&lt;class&gt;*, method *&lt;method&gt;*, is *&lt;var1&gt;* alias of *&lt;var2&gt;* ? "
+      
+Your analysis should answer either "yes" or "No" for this.
+
+The answers should follow the same order as of queries in the query file.
+      
+Your answers should be present in static String array *answers* in *A1* class which can be accessed as *A1.answers*.
+
+###### Example
+
+Consider the below example,
+      
+```
+class P1 {
+  void m1() {
+	 A x,y;
+	 x = new A();
+	 y = new A();
+	 x.foo();
+	 y.foo();
+	 
+ }
+  void m2() {
+	  A a,b,z;
+	  boolean c = true;
+	  a = new A();
+	  b = new A();
+	  if(c)
+		  z = a;
+	  else
+		  z = b;
+	  z.foo();
+ }
+}
+class A{
+	void foo() {
+		System.out.println(10);
+	}
+}
+```
+      
+The Queries
+      
+```
+P1:m1:x alias y
+
+
+P1:m2:a alias z
+
+
+P1:m2:a alias b
+
+
+P1:m2:b alias z
+```
+
+should answer
+```      
+No
+Yes
+No
+Yes
+```
+It means, A1.answers[0] should contain Yes, A1.answers[1] should contain No, and so on..
+
+
+
+
+
+
+
