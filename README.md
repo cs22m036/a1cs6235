@@ -31,26 +31,35 @@ List<Unit> successors = g.getSuccsOf(u);
 
 **Your task is to traverse Control flow graph graph in a control flow order and print the units. (Hint - DFS) . Try to implement this by monday.**
 
-How to get stmt ?
+**How to get stmt ?**
 Simply cast the Unit to stmt. 
-Eg Stmt s = (Stmt) unit;
+Eg: 
+	```
+	Stmt s = (Stmt) unit;
+	```
 
-How to get Definition statements ?
+**How to get Definition statements ?**
+```
 if(s instanceof DefinitionStmt){
 
 }
+```
 
-Once you get the definition statement, you can fetch it's left and right operand as follows
+Once you get the definition statement, you can fetch it's left and right operand as follows :
 
+```
 DefinitionStmt ds = (DefinitionStmt)s;
 Value leftOp = ds.getLeftOp();
 Value rightOp = ds.getRightOp();
+```
 
-How to check if operands are RefLike type ?
-
+**How to check if operands are RefLike type ?**
+	
+```
 if(leftOp.getType() instanceof RefLikeType){
 
 }
+```
 
      
 ## Instructions for Assignment 1:
